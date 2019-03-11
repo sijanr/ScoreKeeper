@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ScoreKeeper</string>
+
+    <!--For EditText hints-->
+    <string name="firstText">Enter Player 1 Name</string>
+    <string name="secondText">Enter Player 2 Name</string>
+    <string name="firstColor">Select color for Player 1</string>
+    <string name="secondColor">Select color for Player 2</string>
+</resources>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".game_layout">
+
+    <TextView
+        style = "@style/CountDown"
+        android:text="00:00"
+        android:id = "@+id/countDown_text_view"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="64dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <TextView
+                style = "@style/PlayerName"
+                tools:text = "Player 1"
+                android:id = "@+id/firstPlayerName"/>
+
+            <TextView
+                style = "@style/ScoreCount"
+                android:text="0"
+                android:id = "@+id/firstPlayerScore"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_orange_light"
+                android:text = "tap"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:id = "@+id/firstPlayer_hit"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="3dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@android:color/holo_orange_light">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                style = "@style/PlayerName"
+                tools:text = "Player 2"
+                android:id = "@+id/secondPlayerName"/>
+
+            <TextView
+                style = "@style/ScoreCount"
+                android:text = "0"
+                android:id = "@+id/secondPlayerScore"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_orange_light"
+                android:text = "tap"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:id = "@+id/secondPlayer_hit"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:text = "game over"
+        android:textAllCaps="true"
+        android:layout_marginTop="32dp"
+        android:layout_gravity="center_horizontal"
+        android:id = "@+id/game_over"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop = "24dp"
+        android:layout_gravity="center_horizontal"
+        tools:text = "player 1 won!"
+        android:textAllCaps="true"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:id = "@+id/player_win"/>
+
+</LinearLayout>
