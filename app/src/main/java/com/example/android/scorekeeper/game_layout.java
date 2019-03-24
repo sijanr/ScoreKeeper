@@ -34,22 +34,22 @@ public class game_layout extends AppCompatActivity {
         secondPlayerName.setText(startGame.getStringExtra("SECOND_PLAYER"));
 
 //       get the players selected color and apply it to their names
-        firstPlayerName.setTextColor(ContextCompat.getColor(this, startGame.getIntExtra("COLOR_PLAYER1",0)));
-        secondPlayerName.setTextColor(ContextCompat.getColor(this,startGame.getIntExtra("COLOR_PLAYER2",0)));
+        firstPlayerName.setTextColor(ContextCompat.getColor(this, startGame.getIntExtra("COLOR_PLAYER1", 0)));
+        secondPlayerName.setTextColor(ContextCompat.getColor(this, startGame.getIntExtra("COLOR_PLAYER2", 0)));
 
         final TextView firstPlayerResult = (TextView) findViewById(R.id.firstPlayerScore);
         final TextView secondPlayerResult = (TextView) findViewById(R.id.secondPlayerScore);
 
 //        apply the selected colors to their respective score
-        firstPlayerResult.setTextColor(ContextCompat.getColor(this,startGame.getIntExtra("COLOR_PLAYER1",0)));
-        secondPlayerResult.setTextColor(ContextCompat.getColor(this,startGame.getIntExtra("COLOR_PLAYER2",0)));
+        firstPlayerResult.setTextColor(ContextCompat.getColor(this, startGame.getIntExtra("COLOR_PLAYER1", 0)));
+        secondPlayerResult.setTextColor(ContextCompat.getColor(this, startGame.getIntExtra("COLOR_PLAYER2", 0)));
 
 
 //        increase score for Player 1 when clicked the 'TAP' button
         final Button firstPlayerButton = (Button) findViewById(R.id.firstPlayer_hit);
-        firstPlayerButton.setOnClickListener(new View.OnClickListener(){
+        firstPlayerButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
+            public void onClick(View view) {
                 firstPlayerScore++;
                 firstPlayerResult.setText(Integer.toString(firstPlayerScore));
             }
@@ -70,33 +70,30 @@ public class game_layout extends AppCompatActivity {
 
 
 //        start the count down and display the game result once it finishes
-        new CountDownTimer(10000,1000) {
+        new CountDownTimer(10000, 1000) {
             @Override
             public void onTick(long l) {
                 countTime++;
-                if(countTime==10){
-                    countDown.setText("00:"+Integer.toString(countTime));
-                }
-                else{
-                    countDown.setText("00:0"+Integer.toString(countTime));
+                if (countTime == 10) {
+                    countDown.setText("00:" + Integer.toString(countTime));
+                } else {
+                    countDown.setText("00:0" + Integer.toString(countTime));
                 }
             }
 
 
-//          display the game score once its over
+            //          display the game score once its over
             @Override
             public void onFinish() {
                 firstPlayerButton.setEnabled(false);
                 secondPlayerButton.setEnabled(false);
                 gameOver.setVisibility(View.VISIBLE);
-                if(firstPlayerScore>secondPlayerScore){
-                    winningPlayer.setText(firstPlayerName.getText().toString()+" won the game");
-                }
-                else if(firstPlayerScore==secondPlayerScore){
+                if (firstPlayerScore > secondPlayerScore) {
+                    winningPlayer.setText(firstPlayerName.getText().toString() + " won the game");
+                } else if (firstPlayerScore == secondPlayerScore) {
                     winningPlayer.setText("tie");
-                }
-                else{
-                    winningPlayer.setText(secondPlayerName.getText().toString()+" won the game");
+                } else {
+                    winningPlayer.setText(secondPlayerName.getText().toString() + " won the game");
                 }
             }
         }.start();

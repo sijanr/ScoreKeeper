@@ -6,4 +6,10 @@
     <string name="secondText">Enter Player 2 Name</string>
     <string name="firstColor">Select color for Player 1</string>
     <string name="secondColor">Select color for Player 2</string>
+    <string name="countdown_time">00:00</string>
+    <string name="player_initial_score">0</string>
+    <string name="tap_button">tap</string>
+    <string name="player2_score">0</string>
+    <string name="game_over_text">game over</string>
+    <string name="begin_button">begin</string>
 </resources>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,47 +7,47 @@
     tools:context=".game_layout">
 
     <TextView
-        style = "@style/CountDown"
-        android:text="00:00"
-        android:id = "@+id/countDown_text_view"/>
+        android:id="@+id/countDown_text_view"
+        style="@style/CountDown"
+        android:text="@string/countdown_time" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="64dp">
+        android:layout_marginTop="64dp"
+        android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:orientation="vertical">
 
             <TextView
-                style = "@style/PlayerName"
-                tools:text = "Player 1"
-                android:id = "@+id/firstPlayerName"/>
+                android:id="@+id/firstPlayerName"
+                style="@style/PlayerName"
+                tools:text="Player 1" />
 
             <TextView
-                style = "@style/ScoreCount"
-                android:text="0"
-                android:id = "@+id/firstPlayerScore"/>
+                android:id="@+id/firstPlayerScore"
+                style="@style/ScoreCount"
+                android:text="@string/player_initial_score" />
 
             <Button
+                android:id="@+id/firstPlayer_hit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@android:color/holo_orange_light"
-                android:text = "tap"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="16dp"
-                android:id = "@+id/firstPlayer_hit"/>
+                android:background="@android:color/holo_orange_light"
+                android:text="@string/tap_button" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="3dp"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:background="@android:color/holo_orange_light">
+            android:background="@android:color/holo_orange_light"
+            android:orientation="vertical">
 
         </LinearLayout>
 
@@ -59,45 +58,45 @@
             android:orientation="vertical">
 
             <TextView
-                style = "@style/PlayerName"
-                tools:text = "Player 2"
-                android:id = "@+id/secondPlayerName"/>
+                android:id="@+id/secondPlayerName"
+                style="@style/PlayerName"
+                tools:text="Player 2" />
 
             <TextView
-                style = "@style/ScoreCount"
-                android:text = "0"
-                android:id = "@+id/secondPlayerScore"/>
+                android:id="@+id/secondPlayerScore"
+                style="@style/ScoreCount"
+                android:text="@string/player_initial_score" />
 
             <Button
+                android:id="@+id/secondPlayer_hit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@android:color/holo_orange_light"
-                android:text = "tap"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="16dp"
-                android:id = "@+id/secondPlayer_hit"/>
+                android:background="@android:color/holo_orange_light"
+                android:text="@string/tap_button" />
 
         </LinearLayout>
     </LinearLayout>
 
     <TextView
+        android:id="@+id/game_over"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:textAppearanceMedium"
-        android:text = "game over"
-        android:textAllCaps="true"
-        android:layout_marginTop="32dp"
         android:layout_gravity="center_horizontal"
-        android:id = "@+id/game_over"/>
+        android:layout_marginTop="32dp"
+        android:text="@string/game_over_text"
+        android:textAllCaps="true"
+        android:textAppearance="?android:textAppearanceMedium" />
 
     <TextView
+        android:id="@+id/player_win"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop = "24dp"
         android:layout_gravity="center_horizontal"
-        tools:text = "player 1 won!"
+        android:layout_marginTop="24dp"
         android:textAllCaps="true"
         android:textAppearance="?android:textAppearanceLarge"
-        android:id = "@+id/player_win"/>
+        tools:text="player 1 won!" />
 
 </LinearLayout>

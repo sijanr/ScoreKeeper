@@ -8,38 +8,44 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name = "MainPage">
-        <item name = "android:layout_width">match_parent</item>
-        <item name = "android:layout_height">wrap_content</item>
-        <item name = "android:layout_marginTop">16dp</item>
-        <item name = "android:layout_marginLeft">16dp</item>
-        <item name = "android:layout_marginRight">16dp</item>
-        <item name = "android:textAppearance">?android:textAppearanceMedium</item>
+    <style name="MainPage">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:textAppearance">?android:textAppearanceMedium</item>
     </style>
 
-    <style name = "CountDown">
-        <item name = "android:layout_height">wrap_content</item>
-        <item name = "android:layout_width">match_parent</item>
-        <item name = "android:layout_marginTop">32dp</item>
-        <item name = "android:layout_marginRight">16dp</item>
-        <item name = "android:layout_marginLeft">16dp</item>
-        <item name = "android:textSize">64sp</item>
-        <item name = "android:gravity">center</item>
+    <style name="CountDown">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:textSize">64sp</item>
+        <item name="android:gravity">center</item>
     </style>
 
-    <style name = "PlayerName">
-        <item name = "android:layout_width">wrap_content</item>
-        <item name = "android:layout_height">wrap_content</item>
-        <item name = "android:layout_gravity">center_horizontal</item>
-        <item name = "android:textAppearance">?android:textAppearanceLarge</item>
+    <style name="PlayerName">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textAppearance">?android:textAppearanceLarge</item>
     </style>
 
-    <style name = "ScoreCount">
-        <item name = "android:layout_width">wrap_content</item>
-        <item name = "android:layout_height">wrap_content</item>
-        <item name = "android:layout_gravity">center_horizontal</item>
-        <item name = "android:layout_marginTop">16dp</item>
-        <item name = "android:textSize">64sp</item>
+    <style name="ScoreCount">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:textSize">64sp</item>
+    </style>
+
+    <style name="ScoreCountLandscape">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
     </style>
 
 </resources>

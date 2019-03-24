@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         String[] colorOption = {"Black", "Green", "Blue", "Red"};
 
-        ArrayAdapter<String> newAdapter = new ArrayAdapter<>(this,android.R.layout.simple_spinner_item, colorOption);
+        ArrayAdapter<String> newAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, colorOption);
 
         newAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
@@ -32,13 +32,13 @@ public class MainActivity extends AppCompatActivity {
 
         Button beginButton = findViewById(R.id.begin_button);
 
-        final Intent startGame = new Intent(MainActivity.this,game_layout.class);
+        final Intent startGame = new Intent(MainActivity.this, game_layout.class);
 
 //      get the player 1 color
         spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                switch(i){
+                switch (i) {
                     case 0:
                         startGame.putExtra("COLOR_PLAYER1", android.R.color.black);
                         break;
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-                switch(i){
+                switch (i) {
                     case 0:
                         startGame.putExtra("COLOR_PLAYER2", android.R.color.black);
                         break;
@@ -105,31 +105,27 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
 
-
 //                get the first player name
                 EditText firstPlayerName = (EditText) findViewById(R.id.firstPlayer);
-                if(firstPlayerName.getText().toString().equals("")){
-                    startGame.putExtra("FIRST_PLAYER","PLAYER 1");
-                }
-                else {
+                if (firstPlayerName.getText().toString().equals("")) {
+                    startGame.putExtra("FIRST_PLAYER", "PLAYER 1");
+                } else {
                     startGame.putExtra("FIRST_PLAYER", firstPlayerName.getText().toString());
                 }
 
 
 //                get the second player name
-                EditText secondPlayerName= (EditText) findViewById(R.id.secondPlayer);
-                if(secondPlayerName.getText().toString().equals("")){
-                    startGame.putExtra("SECOND_PLAYER","PLAYER 2");
+                EditText secondPlayerName = (EditText) findViewById(R.id.secondPlayer);
+                if (secondPlayerName.getText().toString().equals("")) {
+                    startGame.putExtra("SECOND_PLAYER", "PLAYER 2");
+                } else {
+                    startGame.putExtra("SECOND_PLAYER", secondPlayerName.getText().toString());
                 }
-                else{
-                    startGame.putExtra("SECOND_PLAYER",secondPlayerName.getText().toString());
-                }
-
 
 
                 startActivity(startGame);
 
-        }
+            }
         });
     }
 }

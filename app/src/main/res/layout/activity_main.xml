@@ -1,84 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="80dp"
     android:orientation="vertical"
-    tools:context=".MainActivity" >
+    android:paddingTop="80dp"
+    tools:context=".MainActivity">
 
     <EditText
-        style = "@style/MainPage"
+        android:id="@+id/firstPlayer"
+        style="@style/MainPage"
         android:hint="@string/firstText"
-        android:inputType="textCapWords"
-        android:id = "@+id/firstPlayer"/>
+        android:inputType="textCapWords" />
 
     <LinearLayout
-        style = "@style/MainPage"
+        style="@style/MainPage"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text = "@string/firstColor"
-            android:textAppearance="?android:textAppearanceMedium"
-            android:layout_gravity="center_vertical"/>
+            android:layout_gravity="center_vertical"
+            android:text="@string/firstColor"
+            android:textAppearance="?android:textAppearanceMedium" />
 
         <Spinner
+            android:id="@+id/spinner_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:background="@android:drawable/btn_dropdown"
-            android:spinnerMode="dropdown"
-            android:id = "@+id/spinner_1">
+            android:spinnerMode="dropdown">
 
         </Spinner>
 
     </LinearLayout>
 
     <EditText
-        style = "@style/MainPage"
-        android:hint = "@string/secondText"
-        android:inputType="textCapWords"
-        android:id = "@+id/secondPlayer"/>
+        android:id="@+id/secondPlayer"
+        style="@style/MainPage"
+        android:hint="@string/secondText"
+        android:inputType="textCapWords" />
 
     <LinearLayout
-        style = "@style/MainPage"
+        style="@style/MainPage"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text = "@string/secondColor"
-            android:textAppearance="?android:textAppearanceMedium"
-            android:layout_gravity="center_vertical"/>
+            android:layout_gravity="center_vertical"
+            android:text="@string/secondColor"
+            android:textAppearance="?android:textAppearanceMedium" />
 
         <Spinner
+            android:id="@+id/spinner_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:background="@android:drawable/btn_dropdown"
-            android:spinnerMode="dropdown"
-            android:id = "@+id/spinner_2">
+            android:spinnerMode="dropdown">
 
         </Spinner>
 
     </LinearLayout>
 
     <Button
-        android:layout_height="wrap_content"
+        android:id="@+id/begin_button"
         android:layout_width="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text = "begin"
-        android:textAllCaps="true"
-        android:id = "@+id/begin_button"/>
-
-
-
+        android:layout_marginTop="80dp"
+        android:text="@string/begin_button"
+        android:textAllCaps="true" />
 
 
 </LinearLayout>
