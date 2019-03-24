@@ -15,6 +15,8 @@ public class game_layout extends AppCompatActivity {
     private int firstPlayerScore = 0;
     private int secondPlayerScore = 0;
     private int countTime = 0;
+    private TextView countDown;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,19 +68,26 @@ public class game_layout extends AppCompatActivity {
             }
         });
 
-        final TextView countDown = (TextView) findViewById(R.id.countDown_text_view);
+
+        countDown = (TextView) findViewById(R.id.countDown_text_view);
+
+//      get the saved instances if any and set the data in the respective views
+        if(savedInstanceState!=null){
+            countTime = savedInstanceState.getInt("COUNT_TIME");
+            firstPlayerScore = savedInstanceState.getInt("PLAYER1_SCORE");
+            secondPlayerScore = savedInstanceState.getInt("PLAYER2_SCORE");
+            firstPlayerResult.setText(Integer.toString(firstPlayerScore));
+            secondPlayerResult.setText(Integer.toString(secondPlayerScore));
+            setCountDownText();
+        }
 
 
 //        start the count down and display the game result once it finishes
-        new CountDownTimer(10000, 1000) {
+        new CountDownTimer(10000-(countTime*1000), 1000) {
             @Override
             public void onTick(long l) {
                 countTime++;
-                if (countTime == 10) {
-                    countDown.setText("00:" + Integer.toString(countTime));
-                } else {
-                    countDown.setText("00:0" + Integer.toString(countTime));
-                }
+                setCountDownText();
             }
 
 
@@ -97,5 +106,29 @@ public class game_layout extends AppCompatActivity {
                 }
             }
         }.start();
+
+
+
+
     }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("COUNT_TIME",countTime);
+        outState.putInt("PLAYER1_SCORE",firstPlayerScore);
+        outState.putInt("PLAYER2_SCORE",secondPlayerScore);
+    }
+
+    private void setCountDownText(){
+        if (countTime == 10) {
+            countDown.setText("00:" + Integer.toString(countTime));
+        } else {
+            countDown.setText("00:0" + Integer.toString(countTime));
+        }
+    }
+
+
+
+
 }
