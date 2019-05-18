@@ -28,6 +28,7 @@ public class game_layout extends AppCompatActivity {
 
         final TextView winningPlayer = (TextView) findViewById(R.id.player_win);
 
+
 //      get the player names from the previous activity
         Intent startGame = getIntent();
         final TextView firstPlayerName = (TextView) findViewById(R.id.firstPlayerName);
@@ -42,9 +43,12 @@ public class game_layout extends AppCompatActivity {
         final TextView firstPlayerResult = (TextView) findViewById(R.id.firstPlayerScore);
         final TextView secondPlayerResult = (TextView) findViewById(R.id.secondPlayerScore);
 
+        final int firstPlayerColor = ContextCompat.getColor(this, startGame.getIntExtra("COLOR_PLAYER1", 0));
+        final int secondPlayerColor  = ContextCompat.getColor(this, startGame.getIntExtra("COLOR_PLAYER2", 0));
+
 //        apply the selected colors to their respective score
-        firstPlayerResult.setTextColor(ContextCompat.getColor(this, startGame.getIntExtra("COLOR_PLAYER1", 0)));
-        secondPlayerResult.setTextColor(ContextCompat.getColor(this, startGame.getIntExtra("COLOR_PLAYER2", 0)));
+        firstPlayerResult.setTextColor(firstPlayerColor);
+        secondPlayerResult.setTextColor(secondPlayerColor);
 
 
 //        increase score for Player 1 when clicked the 'TAP' button
@@ -98,10 +102,12 @@ public class game_layout extends AppCompatActivity {
                 secondPlayerButton.setEnabled(false);
                 gameOver.setVisibility(View.VISIBLE);
                 if (firstPlayerScore > secondPlayerScore) {
+                    winningPlayer.setTextColor(firstPlayerColor);
                     winningPlayer.setText(firstPlayerName.getText().toString() + " won the game");
                 } else if (firstPlayerScore == secondPlayerScore) {
                     winningPlayer.setText("tie");
                 } else {
+                    winningPlayer.setTextColor(secondPlayerColor);
                     winningPlayer.setText(secondPlayerName.getText().toString() + " won the game");
                 }
             }
