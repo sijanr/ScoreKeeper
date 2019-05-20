@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         final Spinner spinner1 = findViewById(R.id.spinner_1);
         final Spinner spinner2 = findViewById(R.id.spinner_2);
 
-        String[] colorOption = {"Black", "Green", "Blue", "Red"};
+        String[] colorOption = {"White", "Green", "Blue", "Red"};
 
         ArrayAdapter<String> newAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, colorOption);
 
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 switch (i) {
                     case 0:
-                        startGame.putExtra("COLOR_PLAYER1", android.R.color.black);
+                        startGame.putExtra("COLOR_PLAYER1", android.R.color.white);
                         break;
 
                     case 1:
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
 
                 switch (i) {
                     case 0:
-                        startGame.putExtra("COLOR_PLAYER2", android.R.color.black);
+                        startGame.putExtra("COLOR_PLAYER2", android.R.color.white);
                         break;
 
                     case 1:
